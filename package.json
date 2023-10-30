@@ -1,5 +1,5 @@
 {
-  "name": "aws-pipeline",
+  "name": "@jttc/aws-pipeline",
   "repository": {
     "type": "git",
     "url": "git@github.com:JumpToTheCloud/aws-pipeline.git"
@@ -8,6 +8,7 @@
     "build": "npx projen build",
     "bump": "npx projen bump",
     "clobber": "npx projen clobber",
+    "commit": "npx projen commit",
     "compat": "npx projen compat",
     "compile": "npx projen compile",
     "default": "npx projen default",
@@ -29,7 +30,7 @@
     "projen": "npx projen"
   },
   "author": {
-    "name": "Antonio Márquez Pérez",
+    "name": "Jump to the Cloud",
     "email": "antonio.marquez@jumptothecloud.tech",
     "organization": false
   },
@@ -38,12 +39,16 @@
     "@types/node": "^16",
     "@typescript-eslint/eslint-plugin": "^6",
     "@typescript-eslint/parser": "^6",
-    "aws-cdk-lib": "2.1.0",
-    "constructs": "10.0.5",
+    "aws-cdk-lib": "2.103.0",
+    "commitizen": "^4.3.0",
+    "constructs": "10.3.0",
+    "cz-customizable": "^7.0.0",
     "eslint": "^8",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-node": "^0.3.9",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "jest": "^29.7.0",
     "jest-junit": "^15",
     "jsii": "~5.0.0",
@@ -52,6 +57,7 @@
     "jsii-pacmak": "^1.91.0",
     "jsii-rosetta": "~5.0.0",
     "npm-check-updates": "^16",
+    "prettier": "^3.0.3",
     "projen": "^0.76.14",
     "standard-version": "^9",
     "ts-jest": "^29.1.1",
@@ -59,8 +65,8 @@
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.1.0",
-    "constructs": "^10.0.5"
+    "aws-cdk-lib": "^2.103.0",
+    "constructs": "^10.3.0"
   },
   "keywords": [
     "cdk"

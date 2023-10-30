@@ -1,17 +1,29 @@
 import { awscdk } from 'projen';
+import { TrailingComma } from 'projen/lib/javascript/prettier';
 const project = new awscdk.AwsCdkConstructLibrary({
-  author: 'Antonio Márquez Pérez',
+  author: 'Jump to the Cloud',
   authorAddress: 'antonio.marquez@jumptothecloud.tech',
-  cdkVersion: '2.1.0',
+  cdkVersion: '2.103.0',
+  constructsVersion: '10.3.0',
   defaultReleaseBranch: 'main',
   jsiiVersion: '~5.0.0',
   name: 'aws-pipeline',
   projenrcTs: true,
   repositoryUrl: 'git@github.com:JumpToTheCloud/aws-pipeline.git',
+  prettier: true,
+  prettierOptions: {
+    settings: {
+      trailingComma: TrailingComma.ES5,
+      singleQuote: true,
+      bracketSpacing: true,
+      semi: true,
+    },
+  },
+  devDeps: ['commitizen', 'cz-customizable'],
+  packageName: '@jttc/aws-pipeline',
+});
 
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // devDeps: [],             /* Build dependencies for this module. */
-  // packageName: undefined,  /* The "name" in package.json. */
+project.addTask('commit', {
+  exec: './node_modules/cz-customizable/standalone.js',
 });
 project.synth();
